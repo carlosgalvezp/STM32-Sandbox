@@ -18,5 +18,5 @@ DOCKER_RUN="docker run --rm=true                        \
 
 # Compile
 $DOCKER_RUN cmake -DCMAKE_TOOLCHAIN_FILE=$THIS_DIR/cmake/STM32_toolchain.cmake ..
-$DOCKER_RUN make
+$DOCKER_RUN make VERBOSE=1
 
