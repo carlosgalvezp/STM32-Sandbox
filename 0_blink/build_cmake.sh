@@ -9,11 +9,12 @@ mkdir build
 
 # Define docker run call
 THIS_DIR=$(dirname $(readlink -f "$0"))
-DOCKER_RUN="docker run --rm=true                        \
-                       --tty=true                       \
-                       --interactive=true               \
-                       --volume=${THIS_DIR}:${THIS_DIR} \
-                       --workdir=${THIS_DIR}/build      \
+DOCKER_RUN="docker run --rm=true                            \
+                       --tty=true                           \
+                       --interactive=true                   \
+                       --volume="${THIS_DIR}":"${THIS_DIR}" \
+                       --workdir="${THIS_DIR}/build"        \
+                       --user="${UID}":"${GROUPS}"          \
                        carlosgalvezp/stm32-dev"
 
 # Compile
