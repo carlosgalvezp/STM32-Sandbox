@@ -17,7 +17,8 @@ set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -T ${CMAKE_SOURCE_DIR}/lin
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -nostartfiles")
 
 # Set include directiores
-include_directories(include)
+include_directories(3rdparty/CMSIS/Include)
+include_directories(3rdparty/CMSIS/Device/ST/STM32F1xx/Include)
 
 # Compile output into elf file
 add_executable(${CMAKE_PROJECT_NAME} main.cpp)
